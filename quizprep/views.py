@@ -7,6 +7,7 @@ from pyramid.view import view_config
 #!-- Methods
 
 def nlp_talk(data):
+    data = data.encode('utf-8')
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('0.0.0.0', 9990))
     #print s.recv(1024)
