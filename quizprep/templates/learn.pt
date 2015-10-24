@@ -41,10 +41,10 @@
           
           <!-- Form Area -->
           <div>
-            <form>
+            <form method="POST" action="trivia">
               <fieldset>
                 <label> Please enter some text to generate quiz from ...</label>
-                <textarea rows="15" style="width:75%;"></textarea>
+                <textarea rows="15" style="width:75%;" name='in_text'></textarea>
                 <span class="help-block">Example block-level help text here.</span>
                 <button type="submit" class="btn">Submit</button>
               </fieldset>
