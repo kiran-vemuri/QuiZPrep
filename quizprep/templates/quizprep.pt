@@ -31,6 +31,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/"><span class="glyphicon glyphicon-home">&nbsp;Home</span></a></li>
         <li><a href="/learn"><span class="glyphicon glyphicon-book">&nbsp;Learn</span></a></li>
+        <li><a href="/collection"><span class="glyphicon glyphicon-saved">&nbsp;Collection</span></a></li>
       </ul>
     </div>
   </div>
