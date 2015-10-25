@@ -21,6 +21,14 @@
         background: url("${request.static_url('quizprep:static/bg1.jpg')}") no-repeat center center;
         background-size: cover; 
       }
+      .color-cc {
+      	 color: chocolate;
+      }
+      
+      li a {
+      	color: chocolate !important;
+      }
+      
     </style>
   </head>
 
@@ -33,23 +41,22 @@
         <div class="cover-container">
 
           <div class="masthead clearfix">
-            <div class="inner">
+            <div class="inner color-cc">
               <h3 class="masthead-brand">QuizPrep Club</h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="/">Home</a></li>
                   <li><a href="/learn">Learn</a></li>
-                  <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">QuizPrep Club</h1>
-            <p class="lead">A lazy way to learn.</p> 
+            <h1 class="cover-heading color-cc">QuizPrep Club</h1>
+            <p class="lead color-cc">A lazy way to learn.</p> 
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+              <a href="/learn" class="btn btn-lg">Learn more</a>
             </p>
           </div>
 
@@ -74,3 +81,4 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
