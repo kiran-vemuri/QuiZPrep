@@ -9,6 +9,15 @@ import random
 
 #!-- Methods
 
+def db_connect():
+    db_conn = pymysql.connect(host='localhost',
+                                 user='root',
+                                 password='toor',
+                                 db='quizprep',
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
+    return db_conn
+
 def nlp_talk(t_title, data):
     data = data.encode('utf-8')
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -24,13 +33,7 @@ def nlp_talk(t_title, data):
     s.close()
     
     # Connect to the database
-    db_conn = pymysql.connect(host='localhost',
-                                 user='root',
-                                 password='toor',
-                                 db='quizprep',
-                                 charset='utf8mb4',
-                                 cursorclass=pymysql.cursors.DictCursor)
-
+    db_conn = db_connect()
     try:
         with db_conn.cursor() as cursor:
             sql = "select distinct(`name`) from `topics`"
@@ -57,7 +60,6 @@ def nlp_talk(t_title, data):
         db_conn.commit()
     finally:
         db_conn.close()
-    
     
     return qdata
 
@@ -86,13 +88,7 @@ def qparser(request):
 @view_config(route_name='pebbletopics', renderer='json')
 def pebble_json(request):
     # Connect to the database
-    db_conn = pymysql.connect(host='localhost',
-                                 user='root',
-                                 password='toor',
-                                 db='quizprep',
-                                 charset='utf8mb4',
-                                 cursorclass=pymysql.cursors.DictCursor)
-
+    db_conn = db_connect()
     try:
         with db_conn.cursor() as cursor:
             sql = "select distinct(`name`) from `topics`"
@@ -110,13 +106,7 @@ def pebble_json(request):
 def pebble_trivia_json(request):
     topic_title = request.matchdict['topic']
      # Connect to the database
-    db_conn = pymysql.connect(host='localhost',
-                                 user='root',
-                                 password='toor',
-                                 db='quizprep',
-                                 charset='utf8mb4',
-                                 cursorclass=pymysql.cursors.DictCursor)
-
+    db_conn = db_connect()
     try:
         with db_conn.cursor() as cursor:
             sql = "select `questions` from `topics` WHERE `name`=%s"
@@ -125,7 +115,6 @@ def pebble_trivia_json(request):
     finally:
         db_conn.close()
     
-
     q_dict = topic_res['questions']
 
     q_dict = json.loads(q_dict)
