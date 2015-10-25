@@ -10,5 +10,6 @@ def main(global_config, **settings):
     config.add_route('home', '/')
     config.add_route('learn', '/learn')
     config.add_route('qparser', '/trivia')
+    config.add_route('pebbletopics','/pebbletopics')
     config.scan()
     return config.make_wsgi_app()
