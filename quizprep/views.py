@@ -9,8 +9,6 @@ import json
 #!-- Methods
 
 #def nlp_talk(data):
-def nlp_talk():
-=======
 def nlp_talk(t_title, data):
     data = data.encode('utf-8')
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
