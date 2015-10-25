@@ -11,12 +11,23 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
   <style>
     /*#landing{
       background: url("${request.static_url('quizprep:static/bg1.jpg')}") no-repeat center center;
       background-size: cover 
       height:100%; 
     }*/
+    /*
+    .footer{
+       position: absolute;
+       bottom: 0;
+       width: 85%;
+       text-align: center; 
+     }*/
+    div .col-md-4{
+      padding-bottom:12px;
+    }
   </style>
 </head>
 <body>
@@ -31,7 +42,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/"><span class="glyphicon glyphicon-home">&nbsp;Home</span></a></li>
         <li><a href="/learn"><span class="glyphicon glyphicon-book">&nbsp;Learn</span></a></li>
-        <li><a href="/collection"><span class="glyphicon glyphicon-saved">&nbsp;Collection</span></a></li>
+        <li><a href="/collections"><span class="glyphicon glyphicon-saved">&nbsp;Collections</span></a></li>
       </ul>
     </div>
   </div>
@@ -39,17 +50,34 @@
   
 <div class="container">
   <div class="jumbotron" style="text-align:center">
-    <h1>Looking for a smart way to refresh your knowledge of a topic?</h1>
-    <p></p>
+    <p>Tired of flipping pages and skimming through loads of data again and again?<br />
+       looking for a smart way to refresh your knowledge of a topic?<br />
+       Nope. Not Wikipedia. Not a Google search.</p>
+    <h1 style="font-family: 'PT Serif', serif;">QuizPrep.Club</h1>
   </div>
   <div class="row" style="text-align: center">
-    <div class="col-sm-4" style="background-color:#CCddFF;"><h3><span class="glyphicon glyphicon-globe"></span><br />Generation Ready</h3></div>
-    <div class="col-sm-4" style="background-color:#99ccdd;"><h3><span class="glyphicon glyphicon-road"></span><br />Easy Access On The Go</h3></div>
-    <div class="col-sm-4" style="background-color:#99ddFF;"><h3><span class="glyphicon glyphicon-flash"></span><br />Built-In Intelligence</h3></div>
+    <div class="col-md-4" style="background-color:#CCddFF;"><h3><span class="glyphicon glyphicon-globe"></span><br />Generation Ready</h3>
+       <b>-Engineered for the Internet Generation-</b><br />
+       <b>-Fun Trivia for Everyone-</b>
+    </div>
+    <div class="col-md-4" style="background-color:#99ccdd;"><h3><span class="glyphicon glyphicon-road"></span><br />Easy Access On The Go</h3>
+       <b>-Pebble App Enabling M-learning-</b><br />
+       <b>-Stranger Friendly - By Default-</b>
+    </div>
+    <div class="col-md-4" style="background-color:#99ddFF;"><h3><span class="glyphicon glyphicon-flash"></span><br />Built-In Intelligence</h3>
+       <b>-Natural Language Processing-</b><br />
+       <b>-Collaborative Learning-</b>
+    </div>
   </div>
 </div>
 
-
+<!--
+<div class="container">
+  <div class="footer panel-footer">
+   <p>Copyright (c) 2015 | All Rights Reserved</p>
+  </div>
+</div>
+-->
 
 </body>
 </html>
