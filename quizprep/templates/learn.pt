@@ -43,7 +43,9 @@
           <div>
             <form method="POST" action="trivia">
               <fieldset>
-                <label> Please enter some text to generate quiz from ...</label>
+                <label> Topic</label>
+                <input type="text" placeholder="Give a title to your topic" name="topic_title">
+                <label> Topic content</label>
                 <textarea rows="15" style="width:75%;" name='in_text'></textarea>
                 <span class="help-block">Example block-level help text here.</span>
                 <button type="submit" class="btn">Submit</button>
