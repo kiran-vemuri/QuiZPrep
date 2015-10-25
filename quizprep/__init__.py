@@ -12,5 +12,7 @@ def main(global_config, **settings):
     config.add_route('qparser', '/trivia')
     config.add_route('pebbletopics','/pebbletopics')
     config.add_route('pebbletrivia','/pebbletopics/{topic}')
+    config.add_route('usertrivia','/collections/{topic}')
+    config.add_route('usertopics','/collections')
     config.scan()
     return config.make_wsgi_app()

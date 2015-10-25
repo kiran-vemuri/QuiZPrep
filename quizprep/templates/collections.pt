@@ -41,17 +41,14 @@
 <!-- Form Area -->
 <br />
   <div style="text-align:center;">
-    <h2>Topic : ${topic}</h2><hr />
-    <table class='table table-bordered table-striped table-hover table-condensed' style="text-align:left;">
-    <tr>
-      <th>Question</th>
-      <th>Answer</th>
-    </tr>
-    <tr tal:repeat="item out_text">
-        <td>${item.question}</td>
-        <td>${item.answer}</td>
-    </tr>
-    </table>
+    <ul tal:repeat="item usertopics" style="list-style-type:none;"> 
+      <li> 
+      <a class="btn btn-success" href="/collections/${item}"> ${item}</a></li>
+    </ul><br /><br />
+    <!--<ul style="list-style-type:none;">
+      <li><a class="btn btn-info" href="collections/random">Randomize</a></li>
+    </ul>-->
+    
   </div>
 
 </div>

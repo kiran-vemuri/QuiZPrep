@@ -83,7 +83,71 @@ def qparser(request):
         in_text = request.params['in_text']
         topic_title = request.params['topic_title']
         ret_data = nlp_talk(topic_title,in_text)
-    return {'out_text': ret_data}
+    ret_data = json.loads(ret_data)
+    final_dict = []
+    for element in ret_data.keys():
+        final_dict.append({'question':element, 'answer': ret_data[element]})
+    return {'out_text': final_dict,'topic':topic_title}
+
+@view_config(route_name='usertopics', renderer="templates/collections.pt")
+def user_topics(request):
+    db_conn = db_connect()
+    try:
+        with db_conn.cursor() as cursor:
+            sql = "select distinct(`name`) from `topics`"
+            cursor.execute(sql,())
+            topic_res = cursor.fetchall()
+        topic_list = []
+        for element in topic_res:
+            for value in element.values():
+                topic_list.append(value)
+    finally:
+        db_conn.close()
+    return {'usertopics':topic_list}
+
+@view_config(route_name='usertrivia',renderer = 'templates/trivia.pt')
+def user_trivia(request):
+    topic_title = request.matchdict['topic']
+    if topic_title != 'random':
+        # Connect to the database
+        db_conn = db_connect()
+        try:
+            with db_conn.cursor() as cursor:
+                sql = "select `questions` from `topics` WHERE `name`=%s"
+                cursor.execute(sql,(topic_title))
+                topic_res = cursor.fetchone()
+        finally:
+            db_conn.close()
+        topic_res = json.loads(topic_res['questions'])
+        final_dict = []
+        for element in topic_res.keys():
+            final_dict.append({'question':element, 'answer': topic_res[element]})
+    '''
+    elif topic_title == 'random':
+        db_conn = db_connect()
+        try:
+            with db_conn.cursor() as cursor:
+                sql = "select `questions` from `topics`"
+                cursor.execute(sql,(topic_title))
+                topic_res = cursor.fetchall()
+        finally:
+            db_conn.close()
+        qdict = []
+        for element in topic_res:
+            for value in element.values():
+                qdict = qdict+list(json.loads(value))
+        qdict = dict(qdict)
+        final_dict = []
+        for i in xrange(1,10):
+            outkey = random.choice(q_dict.keys())
+            final_dict.append({'question': outkey,'answer':qdict[outkey]})
+
+    '''
+    return {'out_text': final_dict,'topic':topic_title}
+
+
+
+
 
 @view_config(route_name='pebbletopics', renderer='json')
 def pebble_json(request):
@@ -121,4 +185,5 @@ def pebble_trivia_json(request):
     outkey = random.choice(q_dict.keys())
 
     return {'question': outkey, 'answer':q_dict[outkey]}
+
 
