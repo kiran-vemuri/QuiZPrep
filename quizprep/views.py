@@ -5,6 +5,7 @@ import socket
 import pymysql.cursors
 from pyramid.view import view_config
 import json
+import random
 
 #!-- Methods
 
@@ -104,3 +105,33 @@ def pebble_json(request):
     finally:
         db_conn.close()
     return {'pebbletopics':topic_list}
+
+@view_config(route_name='pebbletrivia', renderer='json')
+def pebble_trivia_json(request):
+    topic_title = request.matchdict['topic']
+     # Connect to the database
+    db_conn = pymysql.connect(host='localhost',
+                                 user='root',
+                                 password='toor',
+                                 db='quizprep',
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
+
+    try:
+        with db_conn.cursor() as cursor:
+            sql = "select `questions` from `topics` WHERE `name`=%s"
+            cursor.execute(sql,(topic_title))
+            topic_res = cursor.fetchone()
+    finally:
+        db_conn.close()
+    
+
+    q_dict = topic_res['questions']
+
+    q_dict = json.loads(q_dict)
+    outkey = random.choice(q_dict.keys())
+    out_dict = {}
+    out_dict[outkey]=q_dict[outkey]    
+    #out_dict = random.sample( q_dict.items(), 1 )[0]
+
+    return out_dict
