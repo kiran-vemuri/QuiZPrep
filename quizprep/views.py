@@ -130,8 +130,6 @@ def pebble_trivia_json(request):
 
     q_dict = json.loads(q_dict)
     outkey = random.choice(q_dict.keys())
-    out_dict = {}
-    out_dict[outkey]=q_dict[outkey]    
     #out_dict = random.sample( q_dict.items(), 1 )[0]
 
-    return {'question': out_dict}
+    return {'question': outkey, 'answer':q_dict[outkey]}
