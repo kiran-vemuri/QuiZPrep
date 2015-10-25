@@ -1,76 +1,61 @@
 <!DOCTYPE html>
 <html lang="${request.locale_name}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+  <title>QuizPrep Club - A lazy to learn</title> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>QuizPrep Club - A lazy to learn</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="${request.static_url('quizprep:static/bootstrap/css/bootstrap.min.css')}">
-
-    <!-- Custom Styles -->
-    <link href="${request.static_url('quizprep:static/cover.css')}" rel="stylesheet">
-    
-  </head>
-
-  <body>
-
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">QuizPrep Club</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li><a href="/">Home</a></li>
-                  <li class="active"><a href="/learn">Learn</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          
-          <!-- Form Area -->
-          <div>
-            <form>
-              <fieldset>
-                
-                <label> Your Text</label>
-                <textarea rows="15" style="width:75%;" name='in_text' disabled="disabled">${out_text}</textarea>
-                <span class="help-block">Example block-level help text here.</span>
-                <button type="submit" class="btn">Submit</button>
-              </fieldset>
-            </form>
-
-          </div>
-          
-          <div class="mastfoot">
-            <div class="inner">
-              <p>&copy; QuizPrep | All Rights Reserved</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+    /*#landing{
+      background: url("${request.static_url('quizprep:static/bg1.jpg')}") no-repeat center center;
+      background-size: cover 
+      height:100%; 
+    }*/
+  </style>
+</head>
+<body>
+<br />
+<nav class="navbar navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <img src="${request.static_url('quizprep:static/logo.png')}" style="width:55px; height:55px">
+      <a class="navbar-brand" href="#"></a>
     </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/"><span class="glyphicon glyphicon-home">&nbsp;Home</span></a></li>
+        <li><a href="/learn"><span class="glyphicon glyphicon-book">&nbsp;Learn</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+<!-- Form Area -->
+<br />
+  <div style="text-align:center;">
+    <form method="POST" action="trivia">
+      <fieldset>
+        <label> Topic</label><br />
+        <input type="text" placeholder="Add a title to your topic" name="topic_title"><br /><br />
+        <label> Topic Text</label><br />
+        <textarea rows="15" style="width:75%;" name='in_text'>${out_text}</textarea><br /><br />
+        <button type="submit" class="btn btn-success">Submit</button>
+      </fieldset>
+    </form>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+  </div>
+
+</div>
+
+
+
+</body>
 </html>
+
