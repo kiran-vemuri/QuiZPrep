@@ -99,7 +99,8 @@ def pebble_json(request):
             topic_res = cursor.fetchall()
         topic_list = []
         for element in topic_res:
-            topic_list.append(element.values())
+            for value in element.values():
+                topic_list.append(value)
     finally:
         db_conn.close()
     return {'pebbletopics':topic_list}
