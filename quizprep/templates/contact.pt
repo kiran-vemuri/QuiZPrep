@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+<head>
+  <title>QuizPrep Club - A lazy to learn</title> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="${request.static_url('quizprep:static/quizprerplogo-16x16.png')}">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+    /*#landing{
+      background: url("${request.static_url('quizprep:static/bg1.jpg')}") no-repeat center center;
+      background-size: cover 
+      height:100%; 
+    }*/
+  </style>
+</head>
+<body>
+<br />
+<nav class="navbar navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <img src="${request.static_url('quizprep:static/logo.png')}" style="width:55px; height:55px">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/"><span class="glyphicon glyphicon-home">&nbsp;Home</span></a></li>
+        <li><a href="/learn"><span class="glyphicon glyphicon-book">&nbsp;Learn</span></a></li>
+        <li><a href="/collections"><span class="glyphicon glyphicon-saved">&nbsp;Collections</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+<h2>Creators:</h2>
+<hr />
+<h3> Kiran Vemuri </h3>
+<p>
+Email: kkvemuri@uh.edu<br />
+Phone: (832)701-8281
+</p>
+
+<h3> Vasanthi Vuppuluri </h3>
+<p>
+Email: vuppulurivasanthi@gmail.com<br />
+Phone: (630)804-9048
+</p>
+<h3> Vishvesh Deshmukh </h3>
+<p>
+Email: deshmukh.vish@yahoo.com <br />
+Phone: (571)344-3449
+</p>
+</div>
+
+
+
+</body>
+</html>
+
