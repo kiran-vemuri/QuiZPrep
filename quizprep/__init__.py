@@ -14,5 +14,6 @@ def main(global_config, **settings):
     config.add_route('pebbletrivia','/pebbletopics/{topic}')
     config.add_route('usertrivia','/collections/{topic}')
     config.add_route('usertopics','/collections')
+    config.add_route('contact','/contact')
     config.scan()
     return config.make_wsgi_app()

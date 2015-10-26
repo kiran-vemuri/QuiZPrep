@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <link rel="shortcut icon" href="${request.static_url('quizprep:static/quizprerplogo-16x16.png')}">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -43,6 +43,7 @@
         <li><a href="/"><span class="glyphicon glyphicon-home">&nbsp;Home</span></a></li>
         <li><a href="/learn"><span class="glyphicon glyphicon-book">&nbsp;Learn</span></a></li>
         <li><a href="/collections"><span class="glyphicon glyphicon-saved">&nbsp;Collections</span></a></li>
+        <li><a href="/contact"><span class="glyphicon glyphicon-user">&nbsp;Contact</span></a></li>
       </ul>
     </div>
   </div>

@@ -186,4 +186,6 @@ def pebble_trivia_json(request):
 
     return {'question': outkey, 'answer':q_dict[outkey]}
 
-
+@view_config(route_name='contact', renderer='templates/contact.pt')
+def contact_json(request):
+    return {'hello':'world'}
