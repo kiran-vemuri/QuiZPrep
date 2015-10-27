@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="${request.locale_name}">
 <head>
-  <title>QuizPrep Club - A lazy to learn</title> 
+  <title>QuizPrep Club - A lazy way to learn</title> 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,6 +29,7 @@
       padding-bottom:12px;
     }
   </style>
+  <script src="${request.static_url('quizprep:static/js/ga.js')}"></script>
 </head>
 <body>
 <br />
